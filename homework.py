@@ -427,13 +427,111 @@ match prod_code:
                     deliv_fee == 0 if total >= 80 else deliv_fee == 5
                 case _:
                     print("Invalid")
+    case "H":
+        quant = input("Quantity: ")
+        quanlen = len(quant) 
+        subtotal = 20*int(quant)
+        if quant.isascii() == False:
+            print("Only ascii")
+        elif quant.isdecimal() == False:
+            print("only digits")
+        elif int(quant) < 1 or int(quant) > 5:
+            print(" It must be [1;5]")
+        elif quanlen == 0:
+            print("It cant be empty")
+        else:
+            coupon_code = input("Coupon: ")
+            match coupon_code:
+                case "NONE":
+                    endirim = 0
+                case "SAVE10":
+                    if subtotal >= 100:
+                        endirim = 10
+                    else:
+                        endirim = 0
+                case _:
+                    print("Invalid")
+            disc_total = subtotal * (100 - endirim) / 100
+            print("Delivery --> P (pickup) , S (standart)")
+            deliv_code = input()
+            match deliv_code:
+                case "P":
+                    deliv_fee == 0
+                case "S":
+                    deliv_fee == 0 if total >= 80 else deliv_fee == 5
+                case _:
+                    print("Invalid")
+
 
 total = disc_total + deliv_fee
 if prod_code == "K":
     print("keyboard" , quant , subtotal , endirim,"%", deliv_fee , total)
 elif prod_code == "M":
-    print("mouse" , quant , subtotal , endirim,"%", deliv_fee , total)           
-            
+    print("mouse" , quant , subtotal , endirim,"%", deliv_fee , total)
+elif prod_code == "H":
+    print("headphone" , quant , subtotal , endirim,"%", deliv_fee , total)
+else:
+    print("Invalid")
+#------------------------------------------------------------------------
+student_id = input()
+student_age = input()
+
+
+length = len(student_id)
+if student_id.isascii() == False:
+    print("only ascii")
+elif length != 8:
+    print("it must be 8 characters")
+elif student_id.isdecimal() == False:
+    print("only decimal")
+else:
+    if int(student_age) < 16 or int(student_age) > 65:
+        print("Restricted")
+    else:
+        if student_age.isascii() == False:
+            print("only ascii")
+        elif student_age.isdecimal() == False:
+            print("only decimal")
+        else:
+            student_age = int(student_age)
+            print("PY , WEB , CY")
+            workshop_code = input()
+            match workshop_code:
+                case "PY":
+                    if student_age < 16:
+                        print("rejected")
+                    else:
+                        if student_age <= 18 and student_age >= 16:
+                            discount = 20
+                        else:
+                            discount = 0
+                    payment_amount = input()
+                    if payment_amount.isascii() == False:
+                        print("only ascii")
+                    elif len(payment_amount) == 0:
+                        print("it cant be empty")
+                    elif payment_amount.isdecimal() == False:
+                        print("ONly decimal")
+                    else:
+
+                case "WEB":
+                    if student_age < 16:
+                        print("rejected")
+                    else:
+                        if student_age <= 18 and student_age >= 16:
+                            discount = 20
+                        else:
+                            discount = 0
+                case "CY":
+                    if student_age < 18:
+                        print("rejected")
+                    else:
+                        if student_age <= 18 and student_age >= 16:
+                            discount = 20
+                        else:
+                            discount = 0
+                            print("a")
+
                 
 
 
