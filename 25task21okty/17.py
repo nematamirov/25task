@@ -1,0 +1,1 @@
+# 100 den boyuk tek olub 7 ye qaliqsiz bolunen en kicik ededi cap edir. break de o ededi tapan kimi dovru dayandir

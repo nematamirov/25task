@@ -1,0 +1,1 @@
+# attempts = 0 i dovrun icinde yazib bu da her wrong pass input edende attempt 0 lanir demekdi. yeni saya bilmir
