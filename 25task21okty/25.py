@@ -1,6 +1,6 @@
 card_no = input()
 while len(card_no) != 16:
-    print("Must be 16 digits")
+    print("must be 16 digits")
     card_no = input()
 add_up = 0
 card_no_rev = card_no[::-1]
